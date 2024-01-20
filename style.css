@@ -1,0 +1,18 @@
+.primary-background{
+    background-color: blueviolet;
+}
+
+.card-bg{
+    background-color: rgb(243, 240, 246);
+}
+
+.card{
+    box-shadow: 4px 2px 2px rgb(240, 239, 239);
+    transition-duration: 0.6s;
+}
+
+.card:hover{
+    box-shadow: 4px 8px 4px rgb(225, 236, 246);
+    transform: translateY(-3px);
+    background-color: white;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagson's News App</title>
+
+    <!-- bootstrap  -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- stylesheet  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- navbar  -->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-background">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"><span><img src="/News-App/Images/AppIcon.png" alt="" srcset=""
+                        style="height: 50px;width: 50px;"></span> NewsApp</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#" onclick="fetchNews('India')">All</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('Science')">Science</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('Technology')">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('Politics')">Politics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('Sports')">Sports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="fetchNews('World Affairs')">World Affairs</a>
+                    </li>
+                </ul>
+                <form class="d-flex myform">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- news category title  -->
+    <div class="container news-category-title-box mt-4">
+        <h1><span class="badge primary-background">Category - <span class="category text-dark">All</span></span></h3>
+            <hr>
+    </div>
+
+    <!-- news cards  -->
+    <div class="container d-flex flex-wrap justify-content-around mt-5 mb-5" style="row-gap: 30px;" id="news-cards-container">
+
+    </div>
+
+    <template class="news-card-template">
+        <div class="card card-bg" style="width: 350px;">
+            <img class="card-img-top" alt="..." style="height: 250px;" id="news-img">
+
+            <div class="card-body">
+                <h5 class="card-title" id="news-title">News title <small class="text-secondary" id="author-name"
+                        style="font-size: 16px;">author . <span id="post-date">2024-01-15</span></small></h5>
+
+                <p class="card-text" id="news-desc">Some quick example text to build on the card title and make up the
+                    bulk of the
+                    card's content.</p>
+
+                <div class="text-center card-footer bg-light align-item-end">
+                    <a id="news-link" href="#" class="btn primary-background text-light" style="width: 300px;">Read
+                        More</a>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <!-- bootstrap  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- script  -->
+    <script src="script.js"></script>
+</body>
+
+</html>
