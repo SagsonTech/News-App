@@ -1,4 +1,4 @@
-# [Your App Name]
+Sagson's Indian News App
 
 ## Overview
 
