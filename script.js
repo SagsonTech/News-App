@@ -11,8 +11,23 @@ form.addEventListener('submit' , () => {
     fetchNews(query);
 })
 
+const fetchLatestDate = () => {
+    const dateInMs = new Date().getTime();
+    let yesterdayInMs = dateInMs - 86400000;
+
+    let year = new Date(yesterdayInMs).getFullYear();
+    let month = new Date(yesterdayInMs).getMonth() + 1;
+    let day = new Date(yesterdayInMs).getDate();
+
+    if((month / 10) < 1){
+        month = '0' + month;
+    }
+
+    return `${year}-${month}-${day}`;
+}
+
 async function fetchNews(query) {
-    let response = await fetch(`https://newsapi.org/v2/everything?q=${query}&from=2023-12-20&sortBy=publishedAt&language=en&apiKey=38644f50d73844c38f0dd8a807225d44`);
+    let response = await fetch(`https://newsapi.org/v2/everything?q=${query}&from=${fetchLatestDate()}&sortBy=publishedAt&language=en&apiKey=38644f50d73844c38f0dd8a807225d44`);
     let data = await response.json();
 
     document.querySelector('.category').innerText = query;
